@@ -1,0 +1,61 @@
+<div class="cart my-5 ">
+
+    <div class="text-center py-4">
+        <h1 class="h3 mb-3 fw-bold ">Your Cart !</h1>
+    </div>
+    <div aria-live="polite" toastContainer></div>
+    <table class=" table mx-auto pt-5" style="width: 1000px;" >
+
+        <thead>
+            <tr class="py-5 text-center" >
+                <th>Ảnh</th>
+                <th scope="col">Tên sản phẩm</th>
+                <th scope="col">Đơn Giá</th>
+                <th scope="col">Số lượng</th>
+                <th scope="col">Thành tiền</th>
+                <th scope="col">Thao tác</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="text-center" *ngFor="let key of cart">
+                <td style="width: 100px;"><img
+                        src="{{key.img}}"
+                        style="width: 70%;" alt=""></td>
+                <td>
+                    <p class="my-4">{{key.name}}</p>
+                </td>
+                <td>
+                    <p class="my-4">{{key.price}}.000 VND</p>
+                </td>
+
+                <td>
+                    <input type="number" name="soluong" maxlength="2" size="1" id="number" class=" my-4 "
+                        style="width:70px;" value="1" />
+                </td>
+                <td>
+                    <p class="my-4">50.000 VND</p>
+                </td>
+                <input type="hidden" name="id" id="" value="">
+                <td>
+                    <button class="my-4 btn btn-sm btn-success " name="update" type="submit">Cập nhật</button>
+                    <a class="my-4 mx-2 btn btn-sm btn-danger " href="">Xóa</a>
+                </td>
+            </tr>
+
+        </tbody>
+
+        <tfoot>
+            <tr>
+                <td class="border-0" colspan="2"><a href="/"><button class="btn btn-dark mt-4"> Quay lại Shop
+                        </button></a></td>
+                <td class="border-0 " colspan="3">
+                    <p class="mt-5 fw-bold text-center text-danger float-end">Tổng tiền : 50.000 VND </p>
+
+                <td class="border-0 text-center" colspan=""><button
+                        class="btn btn-success btn-sm mt-4 text-center float-end"><a href=""
+                            class="text-dark nav-link">Thanh Toán</a> </button></td>
+            </tr>
+        </tfoot>
+    </table>
+
+</div>

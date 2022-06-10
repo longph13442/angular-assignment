@@ -1,0 +1,56 @@
+<div class="containerg">
+    <div class="banner my-3">
+        <img src="https://res.cloudinary.com/vulong/image/upload/v1649668191/uploadimg/imyojqelm9t2gmhmg0h1.png" alt=""
+          width="100%">
+      </div>
+    <h4 class="m-3">TẤT CẢ SẢN PHẨM</h4>
+    <!-- end titile -->
+    <div class="box flex d-flex col-12">
+        <div class="item col-3 px-2 text-center" *ngFor="let key of products">
+            <div class="item-img">
+                <a routerLink="productdetail/{{key._id}}"><img src="{{key.img}}" alt="" class="w-100 " height="310px"></a>
+            </div>
+            <!-- end item-img -->
+            <div class="item-content text-center">
+                <h6 class="my-3">{{key.name}}</h6>
+                <span>{{key.price}}.000 VND</span>
+            </div>
+            <!-- end item content -->
+             <a routerLink="productdetail/{{key._id}}"><button class="btn btn-outline-warning w-75  my-3">Xem Chi tiết</button></a>
+        </div>
+        <!-- end item -->
+
+    </div>
+    <!-- end box -->
+
+    <div class="col-12 flex d-flex my-5 ">
+        <div class="col-4 me-3 py-3">
+            <p>Though her persona continues to evolve to her devoted fans, shes simply Kim, a surreal yet relatable
+                public figure who is infinitely watchable. Only one celebrity could shut down Paris Fashion Week by
+                taking a seat in Balenciagas front row wearing head-to-toe caution tape, then study for their
+                latest legal exams during the plane ride home.</p>
+        </div>
+        <div class="col-8 ">
+            <img src="https://res.cloudinary.com/vulong/image/upload/v1649668191/uploadimg/ng8bd0jjrck8l3sehuil.png" alt="" class="w-100">
+        </div>
+    </div>
+
+    <div class="category flex d-flex col-12 text-center my-3">
+        <h5 class="mx-3 ">For Him</h5>
+        <h5 class="mx-3 ">For her</h5>
+    </div>
+    <!-- end category -->
+    <div class="topSale col-12 flex d-flex py-5">
+        <div class="col-4 px-3">
+            <img src="https://res.cloudinary.com/vulong/image/upload/v1649668192/uploadimg/qkagfbpqsyh9am7x76o6.jpg" alt="" class="w-100">
+        </div>
+        <div class="col-4 px-3">
+            <img src="https://res.cloudinary.com/vulong/image/upload/v1649668192/uploadimg/aiippwem11mn3frt2ipd.jpg" alt="" class="w-100">
+        </div>
+        <div class="col-4 px-3">
+            <img src="https://res.cloudinary.com/vulong/image/upload/v1649668192/uploadimg/dqytx0hnlrcdytcsex2q.jpg" alt="" class="w-100" height="339px">
+        </div>
+    </div>
+    <!-- end topSlae -->
+</div>
+<!-- end content -->

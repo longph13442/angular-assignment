@@ -1,0 +1,20 @@
+<h5 class="m-3">CHI TIẾT SẢN PHẨM</h5>
+<form action="">
+    <div class="container col-12 flex d-flex my-3">
+        <div class="col-5">
+            <img src="{{products.img}}" alt="" class="w-100">
+        </div>
+        <div class="col-7 d-flex flex-column m-5">
+            <h6 class="my-3">{{products.name}}</h6>
+            <span class="my-3">{{products.price}}.000 VND</span>
+            <span class="my-3">{{products.desc}}</span>
+                <label for="">Số Lượng</label>
+                <input type="number" name="" id="" class="w-75">
+                <a routerLink="/cart"><button class="btn btn-success my-5 w-50 " (click)="onSubmit()"> Thêm vào giỏ hàng</button></a>
+                <div aria-live="polite" toastContainer></div>
+            
+        </div>
+
+    </div>
+</form>
+    
