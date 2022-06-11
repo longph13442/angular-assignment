@@ -19,5 +19,14 @@ export class ProductsService {
   getProduct(id:any): Observable<TypeProducts>{
     return this.http.get<TypeProducts>(`${environment.products}/${id}`)
   }
+  removeProduct(id:any){
+    return this.http.delete<TypeProducts>(`${environment.products}/${id}`)
+  }
+  creatProduct(data:TypeProducts){
+    return this.http.post<TypeProducts>(`${environment.products}`,data)
+  }
+  updateProduct(id:any,data:TypeProducts){
+    return this.http.put<TypeProducts>(`${environment.products}/${id}`,data)
+  }
   
 }

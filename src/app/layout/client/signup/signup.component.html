@@ -1,19 +1,19 @@
 <main class="form-signin w-50 m-auto text-center mt-5">
-    <form formGroup="">
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
       <a routerLink="/"><img class="mb-4" src="https://res.cloudinary.com/vulong/image/upload/v1649668192/uploadimg/dmfjqci1kekqv0lzcdki.png" alt="" width="72" height="72"></a>
       <h1 class="h3 mb-3 fw-normal">Please sign up</h1>
 
       <div class="form-floating">
-        <input type="text" class="form-control my-3"  placeholder="longtv">
+        <input type="text" class="form-control my-3"  placeholder="longtv" formControlName="name">
         <label for="floatingInput">Name</label>
       </div>
       <div class="form-floating">
-        <input type="email" class="form-control my-3" id="floatingInput" placeholder="name@example.com">
+        <input type="email" class="form-control my-3" id="floatingInput" placeholder="name@example.com" formControlName="email">
         <label for="floatingInput">Email address</label>
       </div>
       
       <div class="form-floating">
-        <input type="password" class="form-control my-3" id="floatingPassword" placeholder="Password">
+        <input type="password" class="form-control my-3" id="floatingPassword" placeholder="Password" formControlName="password">
         <label for="floatingPassword">Password</label>
       </div>
   

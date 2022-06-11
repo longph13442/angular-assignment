@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
@@ -7,31 +7,36 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-            <main class="form-signin  m-auto text-center ">
-                <form>
-                  <a routerLink="/"><img class="mb-4" src="https://res.cloudinary.com/vulong/image/upload/v1649668192/uploadimg/dmfjqci1kekqv0lzcdki.png" alt="" width="72" height="72"></a>
-                  
-                  <div class="form-floating">
-                    <input type="email" class="form-control my-3" id="floatingInput" placeholder="name@example.com">
-                    <label for="floatingInput">Email address</label>
-                  </div>
-                  
-                  <div class="form-floating">
-                    <input type="password" class="form-control my-3" id="floatingPassword" placeholder="Password">
-                    <label for="floatingPassword">Password</label>
-                  </div>
-              
-                  <div class="checkbox mb-3">
-                    <label>
-                      <input type="checkbox" value="remember-me"> Remember me
-                    </label>
-                  </div>
-                  <button class="w-100 btn btn-lg btn-success" type="submit">Sign in</button>
-                  <p class="mt-5 mb-3 text-muted">© longtv-assignment</p>
-                </form>
-              </main>
+            
         </div>
         
       </div>
     </div>
-  </div>
+  </div> -->
+
+  <main class="form-signin  m-auto text-center w-25 my-5 ">
+    <form [formGroup]="signinForm" (ngSubmit)="onSubmit()" >
+
+      <a routerLink="/"><img class="mb-4" src="https://res.cloudinary.com/vulong/image/upload/v1649668192/uploadimg/dmfjqci1kekqv0lzcdki.png" alt="" width="72" height="72"></a>
+      
+      <div class="form-floating">
+        <input type="email" class="form-control my-3" id="floatingInput" placeholder="name@example.com" formControlName="email">
+        <label for="floatingInput">Email address</label>
+      </div>
+      
+      <div class="form-floating">
+        <input type="password" class="form-control my-3" id="floatingPassword" placeholder="Password" formControlName="password">
+        <label for="floatingPassword">Password</label>
+      </div>
+  
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>
+      <button class="w-100 btn btn-lg btn-success" type="submit">Sign in</button>
+      <p class="mt-5 mb-3 text-muted">© longtv-assignment</p>
+     </form>
+
+  </main>
+ 

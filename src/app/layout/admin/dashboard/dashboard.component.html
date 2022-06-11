@@ -1,0 +1,27 @@
+<body>
+    <h6 class="my-3">lIST PRODUCTS</h6>
+    <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Desc</th>
+        <th scope="col">Img</th>
+        <th scope="col"[colSpan]="2">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr *ngFor="let key of products">
+        <th scope="row">1</th>
+        <td>{{key.name}}</td>
+        <td>{{key.price}}</td>
+        <td>{{key.desc}}</td>
+        <td style="width: 100px;"><img src="{{key.img}}" alt="" width="50%" ></td>
+        <td><a routerLink="/admin/updateProducts/{{key._id}}"><button class="btn btn-success">Edit</button></a></td>
+        <td><button class="btn btn-danger" (click)="onRemove(key._id)">Remove</button></td>
+      </tr>
+      
+    </tbody>
+  </table></body>

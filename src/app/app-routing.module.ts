@@ -1,34 +1,67 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CanToAdminGuard } from './guards/can-to-admin.guard';
+import { AddProductsComponent } from './layout/admin/add-products/add-products.component';
+import { AdminComponent } from './layout/admin/admin.component';
+import { DashboardComponent } from './layout/admin/dashboard/dashboard.component';
+import { UpdateProductComponent } from './layout/admin/update-product/update-product.component';
 import { CartComponent } from './layout/client/cart/cart.component';
 import { ClientComponent } from './layout/client/client.component';
 import { HomePageComponent } from './layout/client/home-page/home-page.component';
 import { ProductDetailPageComponent } from './layout/client/product-detail-page/product-detail-page.component';
+import { SigninComponent } from './layout/client/signin/signin.component';
 import { SignupComponent } from './layout/client/signup/signup.component';
 
 const routes: Routes = [
+  
   {
     path: '',
     component: ClientComponent,
-    children:[
+    children: [
       {
         path: '',
-        component:HomePageComponent
+        component: HomePageComponent
       },
       {
-        path:"productdetail/:id",
+        path: "productdetail/:id",
         component: ProductDetailPageComponent
       },
       {
-        path:'cart',
+        path: 'cart',
         component: CartComponent
       }
     ]
   },
+
   {
-    path:'signup',
+    path: 'admin',
+    component: AdminComponent,
+    canActivate: [CanToAdminGuard],
+    children: [
+      {
+        path: '',
+        component: DashboardComponent
+      },
+      {
+        path:'addProducts',
+        component: AddProductsComponent
+      },
+      {
+        path:'updateProducts/:id',
+        component: UpdateProductComponent
+      }
+    ]
+  },
+
+  {
+    path: 'signup',
     component: SignupComponent
-  }
+  },
+  {
+    path: 'signin',
+    component: SigninComponent
+  },
+
 ];
 
 @NgModule({

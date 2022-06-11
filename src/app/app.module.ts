@@ -12,11 +12,16 @@ import { CartComponent } from './layout/client/cart/cart.component';
 import { SignupComponent } from './layout/client/signup/signup.component';
 import { SigninComponent } from './layout/client/signin/signin.component';
 import { HttpClientModule } from '@angular/common/http';
-
+import { DashboardComponent } from './layout/admin/dashboard/dashboard.component';
+//form
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 // toast
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { CommonModule } from '@angular/common';
+import { AddProductsComponent } from './layout/admin/add-products/add-products.component';
+import { UpdateProductComponent } from './layout/admin/update-product/update-product.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +34,9 @@ import { CommonModule } from '@angular/common';
     CartComponent,
     SignupComponent,
     SigninComponent,
+    DashboardComponent,
+    AddProductsComponent,
+    UpdateProductComponent
   ],
   imports: [
     BrowserModule,
@@ -37,6 +45,8 @@ import { CommonModule } from '@angular/common';
     CommonModule,
     BrowserAnimationsModule, 
     ToastrModule.forRoot(),
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
