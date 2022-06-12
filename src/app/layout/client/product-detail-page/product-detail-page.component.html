@@ -9,8 +9,8 @@
             <span class="my-3">{{products.price}}.000 VND</span>
             <span class="my-3">{{products.desc}}</span>
                 <label for="">Số Lượng</label>
-                <input type="number" name="" id="" class="w-75">
-                <a routerLink="/cart"><button class="btn btn-success my-5 w-50 " (click)="onSubmit()"> Thêm vào giỏ hàng</button></a>
+                <input type="number" name="" id="" min="1" class="w-75" [value]="cartValue" (input)="onChange($event)">
+                <button class="btn btn-success my-5 w-50 " (click)="onSubmit()"> Thêm vào giỏ hàng</button>
                 <div aria-live="polite" toastContainer></div>
             
         </div>

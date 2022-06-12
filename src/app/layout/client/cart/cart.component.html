@@ -4,10 +4,10 @@
         <h1 class="h3 mb-3 fw-bold ">Your Cart !</h1>
     </div>
     <div aria-live="polite" toastContainer></div>
-    <table class=" table mx-auto pt-5" style="width: 1000px;" >
+    <table class=" table mx-auto pt-5" style="width: 1000px;">
 
         <thead>
-            <tr class="py-5 text-center" >
+            <tr class="py-5 text-center">
                 <th>Ảnh</th>
                 <th scope="col">Tên sản phẩm</th>
                 <th scope="col">Đơn Giá</th>
@@ -18,9 +18,7 @@
         </thead>
         <tbody>
             <tr class="text-center" *ngFor="let key of cart">
-                <td style="width: 100px;"><img
-                        src="{{key.img}}"
-                        style="width: 70%;" alt=""></td>
+                <td style="width: 100px;"><img src="{{key.img}}" style="width: 70%;" alt=""></td>
                 <td>
                     <p class="my-4">{{key.name}}</p>
                 </td>
@@ -30,15 +28,15 @@
 
                 <td>
                     <input type="number" name="soluong" maxlength="2" size="1" id="number" class=" my-4 "
-                        style="width:70px;" value="1" />
+                        style="width:70px;" value="{{key.value}}" />
                 </td>
                 <td>
                     <p class="my-4">50.000 VND</p>
                 </td>
-                <input type="hidden" name="id" id="" value="">
+                <!-- <input type="hidden" name="id" id="" value=""> -->
                 <td>
                     <button class="my-4 btn btn-sm btn-success " name="update" type="submit">Cập nhật</button>
-                    <a class="my-4 mx-2 btn btn-sm btn-danger " href="">Xóa</a>
+                    <button class="my-4 mx-2 btn btn-sm btn-danger" (click)="onRemove(key._id)">Xoá</button>
                 </td>
             </tr>
 

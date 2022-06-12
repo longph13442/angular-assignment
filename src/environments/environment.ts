@@ -8,7 +8,8 @@ export const environment = {
   products:`${api}/products`,
   cart: `${api}/cart`,
   user:`${api}/signup`,
-  signin:`${api}/signin`
+  signin:`${api}/signin`,
+  users:`${api}/user`,
 
 
 };

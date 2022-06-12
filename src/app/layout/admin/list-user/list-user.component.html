@@ -1,0 +1,28 @@
+<body>
+    <h6 class="my-3">list Account</h6>
+    <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Password</th>
+        <th scope="col">Role</th>
+        <th scope="col"[colSpan]="2">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr *ngFor="let key of user, index as i" >
+        <th scope="row">{{i+1}}</th>
+        <td>{{key.name}}</td>
+        <td>{{key.email}}</td>
+        <td>{{key.password}}</td>
+        <td>{{key.role}}</td>
+        <td><a routerLink="/admin/updateUser/{{key._id}}"><button class="btn btn-success">Edit</button></a></td>
+        <td><button class="btn btn-danger" (click)="onRemove(key._id)">Remove</button></td>
+      </tr>
+      
+    </tbody>
+  </table></body>
+

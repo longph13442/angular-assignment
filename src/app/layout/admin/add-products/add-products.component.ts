@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { ProductsService } from 'src/app/services/products.service';
 import { TypeProducts } from 'src/app/type/TypeProducts';
 
@@ -12,7 +13,8 @@ import { TypeProducts } from 'src/app/type/TypeProducts';
 export class AddProductsComponent implements OnInit {
   adminForm: FormGroup;
   constructor(private productSevice : ProductsService,
-              private router: Router) {
+              private router: Router,
+              private toastr : ToastrService) {
     this.adminForm = new FormGroup({
       name : new FormControl('', Validators.required),
       price : new FormControl('', Validators.required),
@@ -27,6 +29,7 @@ export class AddProductsComponent implements OnInit {
     const formData= this.adminForm.value;
     this.productSevice.creatProduct(formData).subscribe((data)=>{
       this.router.navigateByUrl("/admin")
+      this.toastr.success("Add products success !")
     })
   }
 

@@ -13,11 +13,17 @@ export class UserService {
 
   // getall
   getUser(): Observable<TypeUser[]> {
-    return this.http.get<TypeUser[]>(environment.user)
+    return this.http.get<TypeUser[]>(environment.users)
   }
   // get a
-  getaUser(id: any): Observable<TypeUser> {
-    return this.http.get<TypeUser>(`${environment.user}/${id}`)
+  getaUser(_id: any): Observable<TypeUser> {
+    return this.http.get<TypeUser>(`${environment.users}/${_id}`)
+  }
+  removeUser(_id: any): Observable<TypeUser> {
+    return this.http.delete<TypeUser>(`${environment.users}/${_id}`)
+  }
+  editUser(_id: any,data:TypeUser): Observable<TypeUser> {
+    return this.http.put<TypeUser>(`${environment.users}/${_id}`,data)
   }
   signup(data: TypeUser): Observable<TypeUser> {
     return this.http.post<TypeUser>(`${environment.user}`, data)
@@ -25,6 +31,8 @@ export class UserService {
   signin(data: Typesignin): Observable<Typesignin> {
     return this.http.post<Typesignin>(`${environment.signin}`, data)
   }
+
+
 
 
 }

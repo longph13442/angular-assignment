@@ -4,7 +4,9 @@ import { CanToAdminGuard } from './guards/can-to-admin.guard';
 import { AddProductsComponent } from './layout/admin/add-products/add-products.component';
 import { AdminComponent } from './layout/admin/admin.component';
 import { DashboardComponent } from './layout/admin/dashboard/dashboard.component';
+import { ListUserComponent } from './layout/admin/list-user/list-user.component';
 import { UpdateProductComponent } from './layout/admin/update-product/update-product.component';
+import { UpdateUserComponent } from './layout/admin/update-user/update-user.component';
 import { CartComponent } from './layout/client/cart/cart.component';
 import { ClientComponent } from './layout/client/client.component';
 import { HomePageComponent } from './layout/client/home-page/home-page.component';
@@ -49,6 +51,14 @@ const routes: Routes = [
       {
         path:'updateProducts/:id',
         component: UpdateProductComponent
+      },
+      {
+        path:'account',
+        component: ListUserComponent
+      },
+      {
+        path:'updateUser/:id',
+        component: UpdateUserComponent
       }
     ]
   },

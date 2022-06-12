@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
 import { ProductsService } from 'src/app/services/products.service';
 import { TypeProducts } from 'src/app/type/TypeProducts';
 
@@ -9,7 +10,8 @@ import { TypeProducts } from 'src/app/type/TypeProducts';
 })
 export class DashboardComponent implements OnInit {
   products : TypeProducts[];
-  constructor(private productSevice : ProductsService) { 
+  constructor(private productSevice : ProductsService,
+              private toastr : ToastrService) { 
     this.products=[]
   }
 
@@ -26,6 +28,7 @@ export class DashboardComponent implements OnInit {
     if(confirm && id){
       this.productSevice.removeProduct(id).subscribe((data)=>{
         this.onGetlist();
+        this.toastr.success("Remove success !")
       })
     }
   }

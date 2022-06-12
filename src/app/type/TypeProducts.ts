@@ -11,3 +11,16 @@ export type TypeCreate={
     img:string,
     desc: string
 }
+export type TypeCart={
+    _id: any,
+    name: string,
+    value:number
+}
+export type TypeCarts={
+    _id: any,
+    name: string,
+    value:number,
+    price: number,
+    img:string,
+    desc: string
+}

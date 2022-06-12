@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ProductsService } from 'src/app/services/products.service';
 import { TypeProducts } from 'src/app/type/TypeProducts';
 import { ToastrService } from 'ngx-toastr';
+import { LocalStorageService } from 'src/app/services/local-storage.service';
 
 
 @Component({
@@ -12,10 +13,13 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class ProductDetailPageComponent implements OnInit {
   products: TypeProducts;
-  id: string
+  id: string;
+  cartValue: number
   constructor(private activateRoute: ActivatedRoute,
     private productSevices: ProductsService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private local: LocalStorageService,
+    private router: Router
   ) {
     this.id = "";
     this.products = {
@@ -25,6 +29,7 @@ export class ProductDetailPageComponent implements OnInit {
       img: "",
       desc: ""
     }
+    this.cartValue = 1
   }
 
   ngOnInit(): void {
@@ -37,9 +42,22 @@ export class ProductDetailPageComponent implements OnInit {
     }
 
   }
+  onChange(event: any) {
+    this.cartValue = event.target.value;
+  }
   onSubmit() {
     console.log("abc");
+    
+    const addItem = {
+      ...this.products,
+      value: +this.cartValue,
+    }
+    // localStorage
+    this.local.setItem(addItem)
+    this.cartValue=1;
     this.toastr.success("add to cart success !")
+    this.router.navigateByUrl("/cart")
   }
+  
 
 }

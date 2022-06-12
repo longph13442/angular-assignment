@@ -22,6 +22,9 @@ import { ToastrModule } from 'ngx-toastr';
 import { CommonModule } from '@angular/common';
 import { AddProductsComponent } from './layout/admin/add-products/add-products.component';
 import { UpdateProductComponent } from './layout/admin/update-product/update-product.component';
+import { ListUserComponent } from './layout/admin/list-user/list-user.component';
+import { EditUserComponent } from './layout/admin/edit-user/edit-user.component';
+import { UpdateUserComponent } from './layout/admin/update-user/update-user.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +39,10 @@ import { UpdateProductComponent } from './layout/admin/update-product/update-pro
     SigninComponent,
     DashboardComponent,
     AddProductsComponent,
-    UpdateProductComponent
+    UpdateProductComponent,
+    ListUserComponent,
+    EditUserComponent,
+    UpdateUserComponent
   ],
   imports: [
     BrowserModule,

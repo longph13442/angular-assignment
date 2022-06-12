@@ -13,8 +13,8 @@
     </thead>
     <tbody>
 
-      <tr *ngFor="let key of products">
-        <th scope="row">1</th>
+      <tr *ngFor="let key of products, index as i;">
+        <th scope="row">{{i+1}}</th>
         <td>{{key.name}}</td>
         <td>{{key.price}}</td>
         <td>{{key.desc}}</td>

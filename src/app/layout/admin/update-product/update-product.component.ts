@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, ActivatedRouteSnapshot, Route, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { ProductsService } from 'src/app/services/products.service';
 import { TypeProducts } from 'src/app/type/TypeProducts';
 
@@ -15,7 +16,8 @@ export class UpdateProductComponent implements OnInit {
   id:any;
   constructor(private productSevice : ProductsService,
               private router: Router,
-              private activate : ActivatedRoute) {
+              private activate : ActivatedRoute,
+              private toast : ToastrService) {
     this.dataUpdate={
       _id:'',
       name: '',
@@ -38,10 +40,10 @@ export class UpdateProductComponent implements OnInit {
   ongetList(){
     this.id = this.activate.snapshot.params['id']
     if(this.id){
-      this.productSevice.getProduct(this.id).subscribe((data)=>[
+      this.productSevice.getProduct(this.id).subscribe((data)=>{
         this.dataUpdate = data,
         this.adminForm.patchValue(data)
-    ])
+      })
     }
     
   }
@@ -49,6 +51,7 @@ export class UpdateProductComponent implements OnInit {
     const formData= this.adminForm.value;
     this.productSevice.updateProduct(this.id,formData).subscribe((data)=>{
       this.router.navigateByUrl("/admin")
+      this.toast.success("Update product success !")
     })
   }
 
