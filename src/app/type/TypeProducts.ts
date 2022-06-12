@@ -24,3 +24,7 @@ export type TypeCarts={
     img:string,
     desc: string
 }
+export type TypeCategory={
+    _id: any,
+    name: string
+}

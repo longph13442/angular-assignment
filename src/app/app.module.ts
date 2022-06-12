@@ -25,6 +25,7 @@ import { UpdateProductComponent } from './layout/admin/update-product/update-pro
 import { ListUserComponent } from './layout/admin/list-user/list-user.component';
 import { EditUserComponent } from './layout/admin/edit-user/edit-user.component';
 import { UpdateUserComponent } from './layout/admin/update-user/update-user.component';
+import { CategoryComponent } from './layout/admin/category/category.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { UpdateUserComponent } from './layout/admin/update-user/update-user.comp
     UpdateProductComponent,
     ListUserComponent,
     EditUserComponent,
-    UpdateUserComponent
+    UpdateUserComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,

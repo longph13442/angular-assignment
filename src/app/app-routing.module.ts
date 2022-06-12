@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CanToAdminGuard } from './guards/can-to-admin.guard';
 import { AddProductsComponent } from './layout/admin/add-products/add-products.component';
 import { AdminComponent } from './layout/admin/admin.component';
+import { CategoryComponent } from './layout/admin/category/category.component';
 import { DashboardComponent } from './layout/admin/dashboard/dashboard.component';
 import { ListUserComponent } from './layout/admin/list-user/list-user.component';
 import { UpdateProductComponent } from './layout/admin/update-product/update-product.component';
@@ -59,6 +60,10 @@ const routes: Routes = [
       {
         path:'updateUser/:id',
         component: UpdateUserComponent
+      },
+      {
+        path:'category',
+        component: CategoryComponent
       }
     ]
   },

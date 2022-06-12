@@ -26,8 +26,8 @@ export class SigninComponent implements OnInit {
   }
   onSubmit(){
     const signinData = this.signinForm.value;
-      const check =this.userSevice.signin(signinData).subscribe((data)=>{
-      localStorage.setItem('longin', JSON.stringify(data))
+      this.userSevice.signin(signinData).subscribe((data)=>{
+      const check =localStorage.setItem('longin', JSON.stringify(data))
       this.router.navigateByUrl('/admin')
       this.toastr.success("Logged in successfully !")
       return true;
