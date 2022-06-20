@@ -18,7 +18,8 @@
         <td>{{key.name}}</td>
         <td>{{key.email}}</td>
         <td>{{key.password}}</td>
-        <td>{{key.role}}</td>
+        <td *ngIf="key.role==1">admin</td>
+        <td *ngIf="key.role==0">User</td>
         <td><a routerLink="/admin/updateUser/{{key._id}}"><button class="btn btn-success">Edit</button></a></td>
         <td><button class="btn btn-danger" (click)="onRemove(key._id)">Remove</button></td>
       </tr>

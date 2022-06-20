@@ -15,11 +15,11 @@ export class ProductDetailPageComponent implements OnInit {
   products: TypeProducts;
   id: string;
   cartValue: number
-  constructor(private activateRoute: ActivatedRoute,
-    private productSevices: ProductsService,
-    private toastr: ToastrService,
-    private local: LocalStorageService,
-    private router: Router
+  constructor(private activateRoute: ActivatedRoute, // lấy id từ url
+    private productSevices: ProductsService, // gọi câu lệnh
+    private toastr: ToastrService, // thông báo
+    private local: LocalStorageService, // localstorage
+    private router: Router // điều hướng
   ) {
     this.id = "";
     this.products = {
@@ -47,17 +47,17 @@ export class ProductDetailPageComponent implements OnInit {
   }
   onSubmit() {
     console.log("abc");
-    
+
     const addItem = {
       ...this.products,
       value: +this.cartValue,
     }
     // localStorage
     this.local.setItem(addItem)
-    this.cartValue=1;
+    this.cartValue = 1;
     this.toastr.success("add to cart success !")
     this.router.navigateByUrl("/cart")
   }
-  
+
 
 }

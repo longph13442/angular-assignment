@@ -16,8 +16,16 @@ export class AddProductsComponent implements OnInit {
               private router: Router,
               private toastr : ToastrService) {
     this.adminForm = new FormGroup({
-      name : new FormControl('', Validators.required),
-      price : new FormControl('', Validators.required),
+      name : new FormControl('', [
+        Validators.required,
+        Validators.minLength(6),
+        Validators.maxLength(12)
+      ]),
+      price : new FormControl('',[
+        Validators.required,
+        Validators.min(6),
+        Validators.max(100)
+      ]),
       img : new FormControl('', Validators.required),
       desc : new FormControl('', Validators.required),
     })

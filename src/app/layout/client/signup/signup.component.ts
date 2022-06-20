@@ -17,7 +17,8 @@ export class SignupComponent implements OnInit {
     this.signupForm = new FormGroup({
       name: new FormControl('', Validators.required),
       email: new FormControl(''),
-      password: new FormControl('')
+      password: new FormControl(''),
+      role:new FormControl(0)
     })
   }
 
@@ -29,7 +30,7 @@ export class SignupComponent implements OnInit {
       localStorage.setItem('User',JSON.stringify(data))
      this.toastr.success("Sign up  successfully !")
       // setTimeout(()=>  )
-      this.router.navigateByUrl('/')
+      this.router.navigateByUrl('/signin')
     })
 
   }

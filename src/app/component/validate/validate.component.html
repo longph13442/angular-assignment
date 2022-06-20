@@ -1,0 +1,7 @@
+<div *ngIf="field.dirty">
+    <span *ngIf="field.errors?.['required']" class="text-danger"> {{key}} Không được để trống</span>
+    <span *ngIf="field.errors?.['minlength']" class="text-danger"> {{key}} phải ít nhất 6 kí tự</span>
+    <span *ngIf="field.errors?.['maxlength']" class="text-danger"> {{key}} phải ít hơn 12 kí tự</span>
+    <span *ngIf="field.errors?.['min']" class="text-danger">{{key}} phải lớn hơn 6 </span>
+    <span *ngIf="field.errors?.['max']" class="text-danger">{{key}} phải nhỏ hơn 100 </span>
+</div>

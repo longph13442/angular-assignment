@@ -24,4 +24,7 @@ export class CategoryService {
   editCategory(_id: any,data:TypeCategory): Observable<TypeCategory> {
     return this.http.put<TypeCategory>(`${environment.category}/${_id}`,data)
   }
+  addCategory(data:TypeCategory): Observable<TypeCategory> {
+    return this.http.post<TypeCategory>(`${environment.category}`,data)
+  }
 }

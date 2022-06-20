@@ -7,20 +7,25 @@
         <div class="form-label-group">
           <label for="inputEmail mb-5">Name</label>
           <input type="text" id="name" class="form-control my-2 bg-light" formControlName="name">
+          <app-validate [field]="adminForm.get('name')" key="name"></app-validate>
         </div>
         <div class="form-label-group">
           <label for="inputPassword ">Price</label>
           <input type="text" class="form-control my-2 bg-light" formControlName="price">
+          <app-validate [field]="adminForm.get('price')" key="price"></app-validate>
+
         </div>
         <div class="form-label-group">
           <label for="inputPassword ">Img</label>
           <input type="text" class="form-control my-2 bg-light" formControlName="img">
+          <app-validate [field]="adminForm.get('img')" key="img"></app-validate>
           <div id="error1"></div>
           <span></span>
         </div>
         <div class="form-label-group">
           <label for="inputPassword ">Desc</label>
           <input type="text" class="form-control my-2 bg-light" formControlName="desc">
+          <app-validate [field]="adminForm.get('desc')" key="desc"></app-validate>
           <div id="error2"></div>
           <span></span>
         </div>

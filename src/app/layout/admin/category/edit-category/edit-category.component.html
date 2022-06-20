@@ -1,0 +1,20 @@
+<body><div class="col-9">
+    <form [formGroup]="adminForm" (ngSubmit)="onSubmit()" class=" d-flex row mx-5 my-3" method="post" style="width: 100%;" id="form">
+
+      <div class="col-9 ">
+        <input type="hidden" name="ma_tai_khoan">
+
+        <div class="form-label-group">
+          <label for="inputEmail mb-5">Name</label>
+          <input type="text" id="name" class="form-control my-2 bg-light" formControlName="name">
+        </div>
+        
+        <button class="btn  btn-success btn-md my-4" type="submit" name="profile">Thêm sản phẩm</button>
+      </div>
+      <div class="col-2 text-center mt-3 ms-5 ">
+
+      </div>
+    </form>
+  </div></body>
+
+
